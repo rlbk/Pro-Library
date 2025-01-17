@@ -1,3 +1,5 @@
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 import Image from "next/image";
 import React from "react";
 
@@ -5,7 +7,9 @@ type TProps = {
   children: React.ReactNode;
 };
 
-const Layout = ({ children }: TProps) => {
+const Layout = async ({ children }: TProps) => {
+  const session = await auth();
+  if (session) return redirect("/");
   return (
     <main className="auth-container">
       <section className="auth-form">

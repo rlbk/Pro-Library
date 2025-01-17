@@ -12,3 +12,11 @@ interface IBook {
   video: string;
   isLoanedBook?: boolean;
 }
+
+interface IAuthCredentials {
+  email: string;
+  fullName: string;
+  password: string;
+  universityId: number;
+  universityCard: string;
+}
