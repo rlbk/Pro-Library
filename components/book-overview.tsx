@@ -18,7 +18,6 @@ const BookOverview = ({
   genre,
   rating,
 }: IBook) => {
-  console.log("@coverUrl", coverUrl);
   return (
     <section className="book-overview">
       <div className="flex flex-1 flex-col gap-5">
