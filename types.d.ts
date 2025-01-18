@@ -1,16 +1,16 @@
 interface IBook {
-  id: number;
+  id: string;
   title: string;
   author: string;
   genre: string;
   rating: number;
-  total_copies: number;
-  available_copies: number;
+  totalCopies: number;
+  availableCopies: number;
   description: string;
-  color: string;
-  cover: string;
-  video: string;
-  isLoanedBook?: boolean;
+  coverColor: string;
+  coverUrl: string;
+  videoUrl: string;
+  createdAt: Date | null;
 }
 
 interface IAuthCredentials {

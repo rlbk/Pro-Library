@@ -10,14 +10,15 @@ type TProps = {
 const BookOverview = ({
   title,
   author,
-  available_copies,
-  total_copies,
-  color,
-  cover,
+  availableCopies,
+  totalCopies,
+  coverColor,
+  coverUrl,
   description,
   genre,
   rating,
 }: IBook) => {
+  console.log("@coverUrl", coverUrl);
   return (
     <section className="book-overview">
       <div className="flex flex-1 flex-col gap-5">
@@ -37,10 +38,10 @@ const BookOverview = ({
         </div>
         <div className="book-copies">
           <p>
-            Total books <span className="">{total_copies}</span>
+            Total books <span className="">{totalCopies}</span>
           </p>
           <p>
-            Available books <span className="">{available_copies}</span>
+            Available books <span className="">{availableCopies}</span>
           </p>
         </div>
         <p className="book-description">{description}</p>
@@ -54,12 +55,16 @@ const BookOverview = ({
           <BookCover
             variant="wide"
             className="z-10"
-            coverColor={color}
-            coverImage={cover}
+            coverColor={coverColor}
+            coverImage={coverUrl}
           />
         </div>
         <div className="absolute top-10 left-16 rotate-12 opacity-40 max-sm:hidden">
-          <BookCover variant="wide" coverColor={color} coverImage={cover} />
+          <BookCover
+            variant="wide"
+            coverColor={coverColor}
+            coverImage={coverUrl}
+          />
         </div>
       </div>
     </section>
