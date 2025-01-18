@@ -8,6 +8,13 @@
       "when": 1737130234975,
       "tag": "0000_thin_katie_power",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1737207057419,
+      "tag": "0001_premium_johnny_blaze",
+      "breakpoints": true
     }
   ]
 }

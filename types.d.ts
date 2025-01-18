@@ -20,3 +20,16 @@ interface IAuthCredentials {
   universityId: number;
   universityCard: string;
 }
+
+interface IBookParams {
+  title: string;
+  description: string;
+  author: string;
+  genre: string;
+  rating: number;
+  totalCopies: number;
+  coverUrl: string;
+  coverColor: string;
+  videoUrl: string;
+  summary: string;
+}

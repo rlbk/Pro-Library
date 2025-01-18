@@ -28,6 +28,7 @@ import { bookSchema } from "@/lib/validation";
 import { Textarea } from "@/components/ui/textarea";
 import FileUpload from "@/components/file-upload";
 import ColorPicker from "../color-picker";
+import { createBook } from "@/lib/actions/admin/book.action";
 
 interface IProps extends Partial<IBook> {
   type?: "create" | "update";
@@ -53,7 +54,21 @@ const BookFrom = ({ type, ...book }: IProps) => {
   });
 
   const handleSubmit = async (data: z.infer<typeof bookSchema>) => {
-    console.log(data, "@bookform dta");
+    const result = await createBook(data);
+
+    if (result.success) {
+      toast({
+        title: "Success",
+        description: "Book created successfully",
+      });
+      router.push(`/admin/books/${result.data.id}`);
+    } else {
+      toast({
+        title: "Error",
+        description: result.message,
+        variant: "destructive",
+      });
+    }
   };
 
   return (
