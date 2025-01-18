@@ -1,6 +1,7 @@
 const config = {
   env: {
     apiEndpoint: process.env.NEXT_PUBLIC_API_ENDPOINT!,
+    prodApiEndpoint: process.env.NEXT_PUBLIC_PRODUCTION_API_ENDPOINT!,
     databaseUrl: process.env.DATABASE_URL!,
     upstash: {
       redishUrl: process.env.UPSTASH_REDISH_URL!,
@@ -13,6 +14,7 @@ const config = {
       privateKey: process.env.IMAGEKIT_PRIVATE_KEY!,
       urlEndpoint: process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT!,
     },
+    resendToken: process.env.RESEND_TOKEN!,
   },
 };
 
