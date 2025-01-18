@@ -26,6 +26,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { bookSchema } from "@/lib/validation";
 import { Textarea } from "@/components/ui/textarea";
+import FileUpload from "@/components/file-upload";
 
 interface IProps extends Partial<IBook> {
   type?: "create" | "update";
@@ -175,7 +176,17 @@ const BookFrom = ({ type, ...book }: IProps) => {
                 <FormLabel className="text-base font-normal text-dark-500">
                   Book Image
                 </FormLabel>
-                <FormControl>{/* File Upload */}</FormControl>
+                <FormControl>
+                  <FileUpload
+                    type="image"
+                    accept="image/*"
+                    placeholder="Upload book cover image"
+                    folder="books/covers"
+                    variant="light"
+                    onFileChange={field.onChange}
+                    value={field.value}
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -223,7 +234,18 @@ const BookFrom = ({ type, ...book }: IProps) => {
                 <FormLabel className="text-base font-normal text-dark-500">
                   Book Trailer
                 </FormLabel>
-                <FormControl>{/* Video Upload */}</FormControl>
+
+                <FormControl>
+                  <FileUpload
+                    type="video"
+                    accept="video/*"
+                    placeholder="Upload a book trailer"
+                    folder="books/videos"
+                    variant="light"
+                    onFileChange={field.onChange}
+                    value={field.value}
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
