@@ -5,6 +5,8 @@ const config = {
     upstash: {
       redishUrl: process.env.UPSTASH_REDISH_URL!,
       redishToken: process.env.UPSTASH_REDISH_TOKEN!,
+      qstashUrl: process.env.QSTASH_URL!,
+      qstashToken: process.env.QSTASH_TOKEN!,
     },
     imagekit: {
       publicKey: process.env.NEXT_PUBLIC_IMAGEKIT_PUBLIC_KEY!,
