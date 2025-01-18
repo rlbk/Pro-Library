@@ -3,10 +3,6 @@ import React from "react";
 import { Button } from "./ui/button";
 import BookCover from "./book-cover";
 
-type TProps = {
-  book: IBook;
-};
-
 const BookOverview = ({
   title,
   author,
