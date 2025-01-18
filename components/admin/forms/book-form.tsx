@@ -27,6 +27,7 @@ import { useRouter } from "next/navigation";
 import { bookSchema } from "@/lib/validation";
 import { Textarea } from "@/components/ui/textarea";
 import FileUpload from "@/components/file-upload";
+import ColorPicker from "../color-picker";
 
 interface IProps extends Partial<IBook> {
   type?: "create" | "update";
@@ -51,7 +52,9 @@ const BookFrom = ({ type, ...book }: IProps) => {
     },
   });
 
-  const handleSubmit = async (data: z.infer<typeof bookSchema>) => {};
+  const handleSubmit = async (data: z.infer<typeof bookSchema>) => {
+    console.log(data, "@bookform dta");
+  };
 
   return (
     <div className="flex flex-col gap-4">
@@ -200,7 +203,12 @@ const BookFrom = ({ type, ...book }: IProps) => {
                 <FormLabel className="text-base font-normal text-dark-500">
                   Primary color
                 </FormLabel>
-                <FormControl>{/* Primary Color */}</FormControl>
+                <FormControl>
+                  <ColorPicker
+                    value={field.value}
+                    onPickerChange={field.onChange}
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}

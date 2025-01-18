@@ -35,6 +35,7 @@ interface IProps {
   folder: string;
   variant: "light" | "dark";
   onFileChange: (filePath: string) => void;
+  value?: string;
 }
 
 const FileUpload = ({
@@ -44,10 +45,17 @@ const FileUpload = ({
   folder,
   type,
   variant,
+  value,
 }: IProps) => {
   const { toast } = useToast();
   const ikUploadRef = useRef(null);
-  const [file, setFile] = useState<{ filePath: string } | null>(null);
+  const [file, setFile] = useState<{ filePath: string } | null>(
+    value
+      ? {
+          filePath: value,
+        }
+      : null
+  );
   const [progress, setProgress] = useState(0);
 
   const styles = {
@@ -142,9 +150,8 @@ const FileUpload = ({
         {file && (
           <p className={cn("upload-filename", styles.text)}>{file.filePath}</p>
         )}
-        {/* {file && <p className="upload-filename">{file.filePath}</p>} */}
       </button>
-      {progress > 0 && progress !== 100 && (
+      {progress > 0 && (
         <div className="w-full rounded-full bg-green-200">
           <div className="progress" style={{ width: `${progress}%` }}>
             {progress}%
