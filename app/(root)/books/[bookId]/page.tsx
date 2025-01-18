@@ -24,7 +24,7 @@ const Page = async ({ params }: TProps) => {
   if (!bookDetails) return redirect("/404");
   return (
     <>
-      <BookOverview {...bookDetails} userId={session?.user?.id} />
+      <BookOverview {...bookDetails} userId={session?.user?.id as string} />
       <div className="book-details">
         <div className="flex-[1.5]">
           <section className="flex flex-col gap-7">

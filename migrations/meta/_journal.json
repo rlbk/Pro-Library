@@ -15,6 +15,13 @@
       "when": 1737207057419,
       "tag": "0001_premium_johnny_blaze",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1737215847725,
+      "tag": "0002_free_shiver_man",
+      "breakpoints": true
     }
   ]
 }

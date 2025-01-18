@@ -15,7 +15,7 @@ const Home = async () => {
     .orderBy(desc(books.createdAt))) as IBook[];
   return (
     <>
-      <BookOverview {...latestBooks[0]} />
+      <BookOverview {...latestBooks[0]} userId={session?.user?.id as string} />
       <BookList
         title="Latest Books"
         books={latestBooks.slice(1)}

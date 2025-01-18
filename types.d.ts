@@ -33,3 +33,8 @@ interface IBookParams {
   videoUrl: string;
   summary: string;
 }
+
+interface IBorrowBookParams {
+  bookId: string;
+  userId: string;
+}
